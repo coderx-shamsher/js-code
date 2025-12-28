@@ -74,3 +74,55 @@ let var1 = 'Hello'
 // console.log(und + var1) //undefinedHello 
 
 
+
+//  Primitive types (simple values)
+// Examples: number, string, boolean, null, undefined
+// i can cover more about this type of values of data types !! 
+
+// number 
+let a = 222
+
+// string 
+let st = "this is the string value"
+
+// boolean 
+let boolean = true
+
+/// null 
+let nl = null
+
+// undefined 
+let un = undefined 
+
+// this is the most common used types of values and we can say data types i can explore it later 
+// i can go step by step !! 
+
+
+//  reference values 
+
+// Array 
+let array = [10,200,340,33,445]
+
+
+// objects 
+let obj = {
+      name: "coderx",
+      role: "code_breaker"
+}
+
+//  this is the other data type of reference values  also we cover it in detail about these all types one by one, maine just define kiya hai k yeh sb data type most used hain in the js 
+
+
+
+//  NOTE there are some rule how to define the variable you must read the md file to understand for now i give the code example here 
+
+// ✅ Valid names
+let userName = "Ali";
+let _count = 1;
+let $price = 99;
+let user2 = "Ayesha";
+
+// ❌ Invalid names
+// let 2user = "No";    // cannot start with a digit
+// let my-name = "No";  // hyphen not allowed
+// let let = 5;         // reserved keyword
