@@ -263,112 +263,6 @@ Why it helps:
 
 ***
 
-## 8) Where variables “live”: scope (the boundaries)
-
-Scope means: “Where can I use this variable?”
-
-### 8.1 Block scope (`let` and `const`)
-
-A block is inside `{ ... }` like in `if`, `for`, etc.
-
-```js
-if (true) {
-  let secret = "inside";
-  console.log(secret); // "inside"
-}
-
-console.log(secret); // ❌ ReferenceError (secret is not defined)
-```
-
-Why it works:
-
-- `secret` exists only inside the `{ }` block.
-- Outside the block, JavaScript does not know that name.
-
-
-### ASCII scope diagram
-
-```
-Global scope
-|
-|-- if block scope
-|     secret = "inside"
-|
-(secret is gone here)
-```
-
-
-***
-
-### 8.2 `var` ignores block scope (this is why it’s risky)
-
-```js
-if (true) {
-  var secret = "inside";
-}
-
-console.log(secret); // "inside" ✅ (surprising!)
-```
-
-Why it works:
-
-- `var` does not respect block boundaries.
-- It “leaks” out to the surrounding function or global scope.
-
-***
-
-## 9) Hoisting (why some variables behave “like they move”)
-
-Hoisting means JavaScript “prepares” variable declarations before running your code.
-
-### 9.1 `var` hoisting (the confusing one)
-
-```js
-console.log(a); // undefined (not an error!)
-var a = 10;
-console.log(a); // 10
-```
-
-Why it works:
-JavaScript treats it roughly like this:
-
-```js
-var a;           // declaration is “lifted” to the top
-console.log(a);  // a exists, but has value undefined
-a = 10;          // assignment happens here
-console.log(a);
-```
-
-
-***
-
-### 9.2 `let` and `const` hoisting + “Temporal Dead Zone”
-
-With `let` and `const`, this will fail:
-
-```js
-console.log(b); // ❌ ReferenceError
-let b = 10;
-```
-
-Why it fails:
-
-- `let` and `const` are also “prepared” before running,
-- but JavaScript does NOT allow you to use them before the line where they are declared.
-- The time between start of the scope and the declaration line is called the Temporal Dead Zone (TDZ).
-
-
-### TDZ visual timeline
-
-```
-Start of block
-|
-|  b exists but cannot be used (TDZ)
-|
-|  let b = 10;   <-- now b becomes usable
-|
-End of block
-```
 
 Beginner rule:
 
@@ -376,11 +270,11 @@ Beginner rule:
 
 ***
 
-## 10) Re-assignment vs mutation (a big “const” confusion)
+## 8) Re-assignment vs mutation (a big “const” confusion)
 
 Many beginners think `const` means “nothing can change”. That is not always true.
 
-### 10.1 Re-assignment (changing what the name points to)
+### 8.1 Re-assignment (changing what the name points to)
 
 This is NOT allowed with `const`:
 
@@ -390,7 +284,7 @@ user = { name: "Neha" }; // ❌ cannot re-assign
 ```
 
 
-### 10.2 Mutation (changing inside an object)
+### 8.2 Mutation (changing inside an object)
 
 This IS allowed:
 
@@ -413,9 +307,9 @@ If you want to prevent mutation too, you need extra tools (like `Object.freeze`)
 
 ***
 
-## 11) Primitive values vs reference values (why copying sometimes “shares”)
+## 9) Primitive values vs reference values (why copying sometimes “shares”)
 
-### 11.1 Primitive types (simple values)
+### 9.1 Primitive types (simple values)
 
 Examples: number, string, boolean, null, undefined.
 
@@ -435,7 +329,7 @@ Why it works:
 - `b` gets its own separate value.
 
 
-### 11.2 Objects/arrays (reference values)
+### 9.2 Objects/arrays (reference values)
 
 Copying objects/arrays copies the “address”, not a new object:
 
@@ -481,7 +375,7 @@ console.log(arr2); // [1, 2, 3, 4]
 
 ***
 
-## 12) Common beginner mistakes (and how to avoid them)
+## 10) Common beginner mistakes (and how to avoid them)
 
 - Using a variable before declaring it with `let`/`const`.
 - Writing `const` and then trying to re-assign the variable.
@@ -497,7 +391,7 @@ A simple habit that prevents many issues:
 
 ***
 
-## 13) Mini practice (do this yourself)
+## 11) Mini practice (do this yourself)
 
 Try predicting the output before running:
 
