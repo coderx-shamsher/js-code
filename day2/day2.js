@@ -95,3 +95,84 @@ else{
 let n = null 
 console.log(`\n  value => ${n} type of value is => ${typeof n}`)
 
+
+// symbol (unique identifier)
+// symbol unique IDs banane ke kaam aata hai, even if description same ho.
+
+// maine same values put kri hai Symbol() function main 
+let id1 = Symbol("id1")
+let id2 = Symbol("id1")
+
+// now we console kiya hai or value same hai 
+console.log(id1) 
+console.log(id2)  
+
+// but lest check with 
+if(id1 == id2){
+    console.log("Same id's ")
+}
+// what its give nothing ?? lets try with else 
+else{
+    console.log("yeah id's are uniques not same !!")
+}
+
+// so what we see in the output !! try and understand 
+// so with the symbol() we can create a unique values then looks same but not same jise hammne create ki thi values !   
+
+
+console.log()
+// >>> non primitive or objects and arrays 
+
+// Object (collections + real-world structures)
+// Object = key-value pairs. Think: “profile card” (name, age, city).
+
+let object = {
+     name: "coderX",
+     class: "S class",
+     role: "Pentester"
+}
+
+// object is pair of keys and values 
+// we can access the full object and by key we can access the values but i can cover the object in detailed later so lets console the full object now 
+
+console.log(object)
+console.log(`type of object => ${typeof object}`)
+console.log()
+
+// let access the one value using the key name 
+console.log(`My name is => ${object.name}`)
+
+// Arrays (also object type)
+// Array = ordered list.
+// array main ham mixed values or same type of data (homogenious data ) bhi store kr sakte han 
+
+let array = [100,200,3330,330,33444]
+
+console.log(`the all values of array => ${array}`)
+
+// i the objects we have the pair key and value we can get the values using the key , in the array we have index numbers to get the items inside the array we explore more about this later ... 
+// but lets print the first and last value
+
+console.log(`the first value of array => ${array[0]}`)
+console.log(`the last value of array => ${array[4]}`)
+
+// i explore more ...
+
+
+// Primitive vs Object (copy behavior)
+// Primitives copy by value (independent copy), objects/arrays copy by reference (shared).
+// this is must be the advance for understanding so i explain it but its simple i think
+
+// first i create a1 variable then i give a value 5 then maine ek b1 banya or us ku a1 ki value assign krdi ...  b1 = a1 b1 nu a1 ki value assign ho gyi 
+
+let a1 = 5 
+console.log(a1)
+// but jab maine a1 ki value ko + 10 kya ton value on increment ho gyi but jo value b1 nu assign kri thi or we say b1 ne copy kri thi uski default value bhi change ho gyi ... 
+a1 = a1 + 10
+console.log(`${a1} \n`)
+
+let b1 = a1    // assigning the value of other variable 
+console.log(b1)
+// now jdo main value print kiti tn same ayi then maine b1 ki value ko + 5 kiya or print kita kuj khass huya nhi but ..... remember the assigned value of a1 to b1 is 5 ok 
+b1 = b1 + 5 
+console.log(b1)
