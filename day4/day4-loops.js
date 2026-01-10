@@ -161,4 +161,116 @@ for ( let table = 1; table <=10 ; table = table + 1 ){
           // NOTE : the for and while loops are mostly used do while is used but rarely ! because its complexity of code if you code base is bigger so its hard to debug or even understand and code with do while loop  
           // but its also important to know  :)
 
-          
+ 
+/** -->> For..of and for..in loops 
+ * 
+ *  1) for..of loop : 
+ *       (values of arrays/strings)
+      for...of iterates over values from an iterable like Array or String.
+ *  
+  *   Syntax :  
+  *     for (variable of iterable) {
+  *       // loop body
+  *     }
+  *    
+ * 
+ *  */          
+  console.log()
+  console.log('for of loop example ')
+  console.log() 
+  let values = ['windows', 'macOS', 'Linux', 'Ubuntu-linux', 'Android', 'iOS' ]    
+  
+  // use the auto complete feature of vscode just type forof and hit tab  it will create the for of loop structure for you
+
+  //  we wil print the all values in the array 
+  console.log(values.length)  // first we will check the length of the array
+
+  // Hamne array ki length check ki then in the for of looop hamne elements ke sath ur array values k index values bhi print krawaye
+  // this is loop is for objects or strings but ese use kr sakte hain arrays k liye bhi ..
+    for (const elements of values ) {
+         console.log(` Index-number of " ${elements} "  is :  ${values.indexOf(elements)} `)
+  }
+  // Why it works: arrays are iterable, loop gives each value one by one.
+ 
+
+  /** 2) for..in loop :
+   * for...in (keys/properties of objects)
+In general, for...in is used to iterate over property names (keys).
+
+    * Syntax :
+    for (variable in object)  {
+        // loop body
+    }
+        es loop ka use hum objects k properties ko access krne k liye krte hain 
+    * 
+    * Example :
+    // let obj = {a: 1, b: 2, c: 3};  
+     using the key name we can access the values of objects 
+   * 
+   * 
+   */
+
+    console.log()
+   
+    console.log('for in loop example ')
+    console.log()
+    let ob ={
+        name1 : "user_doc",
+        profession1 : "developer",
+        name2 : "user_admin",
+        profession2 : "Linux_Server_Admin"
+    }
+
+    for (const key in ob) {
+      // if (!Object.hasOwn(object, key)) continue; 
+      // this line is cover in detailed now i just skipped it for now 
+      const element = ob[key];   // using this we can access the values of the object using the key names. loop values ki get kr kr element variable me store kr raha hai 
+      // we will print the key and values of the object 
+      console.log(`${key} : ${element}`)
+    
+    } 
+  
+    // Array values → for...of
+// Object keys → for...in
+
+
+/// break and continue in loops 
+// These control loop flow 
+// break = stop loop completely
+ console.log()
+ console.log('Break statement example ')
+ console.log()
+let ex = 10 
+for ( ex ; ex < 455 ; ex = ex +5 ) {
+  if (ex == 355) {
+    console.log('Breaking the loop at 355')
+    // jaise he loop hit krega at 355 wo loop break kr dega.. thats simple.. 
+    break;
+  }
+  console.log(ex)
+  
+  }
+ 
+  console.log()
+  console.log('Continue statement example ')
+  console.log()
+// continue = skip current iteration and move to next one 
+  
+  for (let a = 1; a <= 40; a++){
+    if(a == 10 ){
+      console.log('Skipping the number 10')
+      continue
+    }
+    if ( a == 20 ){
+      console.log('Skipping the number 20')
+      continue
+    }
+    if ( a == 30 ){
+      console.log('Skipping the number 30')
+      continue
+    }
+    console.log(a)
+    
+  }
+
+  // continue jumps to next iteration
