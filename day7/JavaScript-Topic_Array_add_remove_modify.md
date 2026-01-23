@@ -138,6 +138,137 @@ Middle (splice) = 🐌 Slowest
 ## Summary
 
 **Daily use:** `push/pop` for carts. `splice` for editing. Direct `arr[^0] = new` for single changes. Practice: Shopping cart with add/remove at any position. Next: Array iteration![^1][^2]
+
+
+# **JavaScript Array Negative Indexing - 5 Easy Methods** 🚀
+
+## **🎯 Problem: JS mein direct `arr[-1]` nahi chalta!**
+
+**JavaScript arrays 0-based indexing only (0, 1, 2...)**
+**Negative index = Object property ban jata hai (bug-prone)**
+
+## **✅ Method 1: `length + index` (SIMPLEST - Most Used)**
+
+```javascript
+const fruits = ['apple', 'banana', 'orange', 'mango'];
+
+console.log(fruits[fruits.length - 1]);  // "mango" (last)
+console.log(fruits[fruits.length - 2]);  // "orange" (2nd last)
+console.log(fruits[fruits.length - 3]);  // "banana"
+
+// Short version
+const last = fruits[fruits.length - 1];
+const secondLast = fruits.at(-2);  // ES2022 (modern)
+```
+
+## **✅ Method 2: `slice(-n)` (Array Slice)**
+
+```javascript
+const numbers = [10, 20, 30, 40, 50];
+
+console.log(numbers.slice(-1));    // [50] (array)
+console.log(numbers.slice(-2));    // [40, 50]
+console.log(numbers.slice(-1)[0]); // 50 (single value)
+```
+
+## **✅ Method 3: `at()` Method (ES2022 - CLEANEST)**
+
+```javascript
+const colors = ['red', 'green', 'blue'];
+
+console.log(colors.at(-1));  // "blue"
+console.log(colors.at(-2));  // "green"
+console.log(colors.at(-3));  // "red"
+
+// Backward compatible function
+const at = (arr, index) => arr[arr.length + index];
+console.log(at(colors, -1)); // "blue"
+```
+
+## **✅ Method 4: Utility Function (Reusable)**
+
+```javascript
+function get(arr, index) {
+    if (index < 0) {
+        index = arr.length + index;
+    }
+    return arr[index];
+}
+
+const items = ['shirt', 'pant', 'shoes'];
+console.log(get(items, -1));  // "shoes"
+console.log(get(items, -2));  // "pant"
+console.log(get(items, 0));   // "shirt" (positive bhi)
+```
+
+## **✅ Method 5: Proxy (Advanced - Native Negative Indexing)**
+
+```javascript
+const createNegArray = (...elements) => {
+    const arr = [...elements];
+    return new Proxy(arr, {
+        get(target, prop) {
+            const index = Number(prop);
+            if (index < 0) {
+                prop = String(target.length + index);
+            }
+            return Reflect.get(target, prop);
+        }
+    });
+};
+
+const arr = createNegArray('a', 'b', 'c');
+console.log(arr[-1]);  // 'c'
+console.log(arr[-2]);  // 'b'
+```
+
+## **🎯 Quick Reference Table**
+
+| **Method** | **Code** | **Returns** | **Best For** |
+|------------|----------|-------------|--------------|
+| **Length** | `arr[arr.length-1]` | **Single** | Daily use |
+| **slice** | `arr.slice(-1)[0]` | **Array** | Multiple items |
+| **at()** | `arr.at(-1)` | **Single** | Modern browsers |
+| **Utility** | `get(arr, -1)` | **Single** | Reusable |
+| **Proxy** | `arr[-1]` | **Single** | Advanced |
+
+## **🚀 Production Ready Utility (Copy-Paste)**
+
+```javascript
+// Add to your utils file
+const negIndex = (arr, index) => {
+    if (index < 0) index = arr.length + index;
+    return arr[index];
+};
+
+// Usage
+const tasks = ['task1', 'task2', 'task3'];
+console.log(negIndex(tasks, -1));  // "task3"
+console.log(negIndex(tasks, -2));  // "task2"
+```
+
+## **⚠️ DON'T DO THIS (Common Bug)**
+
+```javascript
+// ❌ WRONG - Negative index object property ban jata hai
+const arr = ['a', 'b', 'c'];
+arr[-1] = 'z';  // arr['-1'] = 'z' ho gaya!
+console.log(arr); // ['a', 'b', 'c', '-1': 'z']
+console.log(arr.length); // 3 (unchanged!)
+```
+
+## **Hinglish Bottom Line**
+```
+arr[arr.length - 1] = Last element
+arr.slice(-1)[0] = Last element (array se)
+arr.at(-1) = Modern way
+Utility function banao = Reusable
+
+Daily: length - 1 use karo (fastest + simple)!
+```
+
+**🎯 Copy `negIndex` function → Har project mein use karo!** 😎
+
 <!-- <span style="display:none">[^3][^4][^5][^6][^7][^8][^9]</span> -->
 
 <!-- 
