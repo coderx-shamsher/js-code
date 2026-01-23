@@ -162,10 +162,152 @@ Array.isArray(obj)            // false ✅
 
 ## Summary
 **Always:** `Array.isArray(arr)` - works everywhere. `instanceof` only for learning. Real code mein sirf `Array.isArray()`! Next: Objects deep dive.
+<!-- 
+<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/> -->
+
+# JavaScript Topic 10: Array vs Object - Key Differences
+
+Arrays store **ordered lists** accessed by numbers (0, 1, 2...). Objects store **key-value pairs** accessed by names. Choose arrays for sequences, objects for labeled data.
+
+## English Explanation
+
+**Core Philosophy:** Arrays = "What comes first?" Objects = "What's its name?"
+
+### Comparison Table
+
+| Feature | Array | Object |
+| :-- | :-- | :-- |
+| **Access** | `arr[^0]` (numbers) | `obj.name` (strings) |
+| **Order** | Ordered (important) | Unordered |
+| **Use Case** | Lists, sequences | Properties, config |
+| **typeof** | `"object"` | `"object"` |
+| **Length** | `arr.length` | No length |
+
+### Practical Examples
+
+```javascript
+// ARRAY - Shopping cart (order matters)
+let cart = ["apple", "banana", "milk"];
+console.log(cart[^1]);  // "banana" - 2nd item
+cart.push("bread");    // Easy add
+
+// OBJECT - Student record (named properties)
+let student = {
+    name: "Rahul",
+    age: 20,
+    city: "Ludhiana"
+};
+console.log(student.name);  // "Rahul" - by name
+student.age = 21;           // Easy update
+```
+
+**Visual Difference:**
+
+```
+Array:    [^0]→"apple"  [^1]→"banana"  [^2]→"milk"
+Object:   name→"Rahul" age→20       city→"Ludhiana"
+```
+
+**When to Use What (Interview Question):**
+
+```javascript
+// ✅ ARRAY when: List of similar items
+let marks = [85, 92, 78];           // Student scores
+let cities = ["Delhi", "Mumbai"];   // City list
+
+// ✅ OBJECT when: Named properties
+let laptop = { brand: "Dell", ram: 16, price: 50000 };
+let config = { theme: "dark", lang: "hi" };
+```
+
+**Common Mistake - Wrong Choice:**
+
+```javascript
+// ❌ Wrong - using array for named data
+let wrong = ["Rahul", 20, "Ludhiana"];  // What’s index 1?
+
+// ✅ Right - object for clarity
+let right = { name: "Rahul", age: 20, city: "Ludhiana" };
+```
+
+**Array of Objects (Best of Both):**
+
+```javascript
+let students = [
+    { name: "Rahul", marks: 85 },
+    { name: "Priya", marks: 92 }
+];
+// List (array) + Properties (objects) = Perfect!
+```
+
+
+## Hinglish Explanation (Quick Reference)
+
+**Array = Number se access, List ke liye**
+**Object = Naam se access, Details ke liye**
+
+### Quick Examples
+
+```javascript
+// Array - Shopping list
+let dukaan = ["doodh", "roti", "sabzi"];
+dukaan[^0]  // "doodh"
+
+// Object - Student details
+let student = { naam: "Rahul", umar: 20 };
+student.naam  // "Rahul"
+```
+
+**Kab Use Karo:**
+
+```
+Numbers list? → Array [1,2,3]
+Student info? → Object {name:"Rahul"}
+Menu items? → Array of Objects
+```
+
+**Galti:**
+
+```javascript
+❌ let galat = ["Rahul", 20];  // Umar kahan hai?
+✅ let sahi = {name:"Rahul", age:20};
+```
+
+```
+Visual:
+Array:  [^0] [^1] [^2]  → Numbers
+Object: name age city → Words
+```
+
+
+## Summary
+
+**Rule:** Ordered list = Array. Named data = Object. Practice: Convert shopping list (array) vs product details (object). Next: Array of Objects![^1][^3]
+<span style="display:none">[^10][^4][^5][^6][^7][^8][^9]</span>
 
 <div align="center">⁂</div>
 
-[^1]: https://stackoverflow.com/questions/12996871/why-does-typeof-array-with-objects-return-object-and-not-array
+<!-- [^1]: https://dev.to/justinw7/difference-between-objects-and-arrays-in-javascript-3ja3
+
+[^2]: https://www.geeksforgeeks.org/javascript/difference-between-array-and-array-of-objects-in-javascript/
+
+[^3]: https://www.geeksforgeeks.org/javascript/difference-between-javascript-arrays-and-objects/
+
+[^4]: https://stackoverflow.com/questions/60913548/javascript-array-vs-object
+
+[^5]: https://www.w3schools.com/js/js_arrays.asp
+
+[^6]: https://www.youtube.com/watch?v=uPSPCX7yxV8
+
+[^7]: https://eloquentjavascript.net/04_data.html
+
+[^8]: https://www.reddit.com/r/learnjavascript/comments/11o0f0f/objects_vs_arrays/
+
+[^9]: https://www.youtube.com/watch?v=Xjgl8FI6NSE
+
+[^10]: https://www.codecademy.com/forum_questions/53a7ba31548c351d0c00706a -->
+
+<!-- [^1]: https://stackoverflow.com/questions/12996871/why-does-typeof-array-with-objects-return-object-and-not-array
 
 [^2]: https://www.reddit.com/r/learnjavascript/comments/siwbhh/why_is_my_array_being_declared_as_object/
 
@@ -183,5 +325,7 @@ Array.isArray(obj)            // false ✅
 
 [^9]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
 
-[^10]: https://www.w3schools.com/jsref/jsref_oper_typeof.asp
+[^10]: https://www.w3schools.com/jsref/jsref_oper_typeof.asp -->
 
+
+<div align="center">⁂</div>
