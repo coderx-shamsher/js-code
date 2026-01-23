@@ -1,4 +1,4 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
+<!-- <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/> -->
 
 # **JavaScript Objects - Complete Developer Guide** 🚀
 
@@ -78,9 +78,9 @@ user["city"] = "Delhi";
 // Update existing
 user.age = 26;
 
-// Short-hand (ES6)
-const name = "Priya";
-const user2 = { name, age: 30 }; // {name: "Priya", age: 30}
+// // Short-hand (ES6)
+// const name = "Priya";
+// const user2 = { name, age: 30 }; // {name: "Priya", age: 30}
 ```
 
 
@@ -364,7 +364,7 @@ Practice: User object banao → Methods add → Destructure → Master!
 
 <div align="center">⁂</div>
 
-[^1]: https://www.geeksforgeeks.org/javascript/javascript-object-methods/
+<!-- [^1]: https://www.geeksforgeeks.org/javascript/javascript-object-methods/
 
 [^2]: https://www.simplilearn.com/tutorials/javascript-tutorial/javascript-objects
 
@@ -382,5 +382,5 @@ Practice: User object banao → Methods add → Destructure → Master!
 
 [^9]: https://www.youtube.com/watch?v=jBqwGf8g9Kc
 
-[^10]: https://javascript.info/object-methods
+[^10]: https://javascript.info/object-methods -->
 
