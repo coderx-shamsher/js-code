@@ -40,7 +40,7 @@ console.log()
 console.log('typs of array and object -->')
 console.log('Array ==>', typeof (arr), '\n', 'Object ==>', typeof (obj))
 
-
+// Arrays are special objects with numeric keys (0,1,2...) + length property + array methods.
 /// NOTE Arrays  are some special objects in js that have object and arrays features crazyyy!!!! 
 /** Arrary behind the scenes :- 
  * [1,2,3] = {0:1, 1:2, 2:3 } --> length:3
@@ -123,7 +123,7 @@ let testarr2 = ['hello','my']
 console.log()
 console.log(`Accessing the Values of an array using the Indexing methods..`)
 
-//Indexing methods  ---- positive and negative 
+//Indexing methods  ---- positive indexing 
 console.log()
 
 let firstele = testarr2[0]
@@ -143,7 +143,7 @@ console.log(`Length of my array => ${testarr2.length}`)
 // push() function or method ! add to end 
 // how to use 
 /**
- *  array.puch(value/element)
+ *  array.push(value/element)
  *  
  */
 
@@ -197,3 +197,116 @@ console.log(`Index0 =>> ${testarr2[0]}`)
 console.log(`Index1 =>> ${testarr2[1]}`)
 
 
+//  Negative Indexing  to get elements 
+console.log()
+console.log(testarr2)
+// we cannot use the negative indexing like python exmple 
+
+let n1 = testarr2[-1]
+console.log(`Negative indexing -->`,n1) //we got the undefined now remember jb bhi negative yan positive indexing krni ho toh use this method 
+
+// Negative indexing using the .at()
+// we can do both let code. 
+let nth1 = testarr2.at(-1) // -1 say ham last vali value ko get krege keo ? vese to yeh value last hai last the pov of postive indexing but in the negative its the first last value means yeh right to left carry krti hai
+let nth2 = testarr2.at(-2)  
+
+/*** 
+ * 
+ *    hello, this, is , the , linux 
+ *      -5    -4   -3   -2    -1
+ * 
+ * just for understang
+ */
+
+console.log(testarr2)
+console.log(`using the  0 index --> ${testarr2.at(0)}`)
+console.log(`using the -1 index --> ${nth1}`)
+console.log()
+console.log(`using the 1 index --> ${testarr2.at(1)}`)
+console.log(`using the -2 index --> ${nth2}`)
+console.log()
+
+
+
+// now to the get the index number of any elements inside an array 
+// using the .indexOf()
+
+// first lets add more elements to an array 
+testarr2.push("hypr")
+testarr2.push("arch")
+testarr2.push("windows")
+testarr2.push("debian")
+console.log(testarr2)
+
+// indexOf() --> yeh function ek string value mangta hai or hame ek index number return krta hai or vo postive number he hota hai.. return krna ... ager oh element present na ho to -1 return krega 
+// ager apo kisi bhi element ka index pta krna hai to use this first 
+console.log()
+console.log(`index number is => ${testarr2.indexOf("hypr")}`)
+console.log(`index number is => ${testarr2.indexOf("windows")}`)
+console.log(`index number is => ${testarr2.indexOf("Admin!")}`)
+
+// let see  add more elements at the start of the array 
+testarr2.unshift("negative21")
+// testarr2.unshift("negative32")
+console.log(testarr2)
+console.log()
+// console.log(`index number is => ${testarr2.indexOf("")}`)
+console.log(`index number is => ${testarr2.indexOf("negative21")}`)
+testarr2.push("negative44")
+console.log(`index number is => ${testarr2.indexOf("negative44")}`)
+
+
+console.log()
+// indexOf() with at()
+console.log(`Getting the index of ${testarr2.at(-1)} ==> ${testarr2.indexOf("debian")}`)
+console.log(`Getting the index of ${testarr2.at(-3)}   ==> ${testarr2.indexOf("arch")}`)
+console.log(`Getting the index of ${testarr2.at(1)}  ==> ${testarr2.indexOf("Admin!")}`)
+
+
+// let see more method to create array 
+
+let arraynth1 = Array.of("alex","alan","apex",'masha',"natasha")
+console.log()
+console.log(arraynth1) 
+
+// or we can also use 
+let arraynth2 = new Array(11,222,334,556,554)
+console.log()
+console.log(arraynth2)
+
+
+// now lets see the Array.isArray() vs instanceof 
+let iarr = []
+console.log(iarr instanceof Array)   // some times its give false info 
+console.log(Array.isArray(iarr))
+console.log()
+// now 
+let fakeArr = []
+fakeArr.__proto__ = null
+console.log(fakeArr instanceof Array) // yeh false show kr raha hai
+console.log(Array.isArray(fakeArr))   // yeh true show kr raha hai 
+console.log()
+
+// using the 
+let protoarr = []
+protoarr.__proto__ = Array.prototype
+console.log(protoarr instanceof Array)
+console.log(Array.isArray(protoarr))
+
+// array as object 
+let objarr = Object.create(Array.prototype)
+console.log(typeof(objarr))
+objarr.push("value1") // its works as array ! 
+console.log(objarr)
+console.log()
+console.log(objarr instanceof Array)
+console.log(Array.isArray(objarr))    // this is true keo k hamne object.create() method main ek array prototype create kiya hai or vo ek object hai not an array
+
+// now konsa use krna chaahie so always use the --> Array.isArray() ...
+
+// NOTE Arrays are objects in js! type correctly shows object , no negative effect on usage. 
+// Arrays are special objects with numeric keys (0,1,2...) + length property + array methods.
+// ager app ne object.create ki help say array create kiya  hai to app bhi ese dekh sakte hain jise maine kia hai or print kiya hai us objectarr ko....
+// Array = Object with numbers as keys
+// [1,2,3] = {0:1, 1:2, 2:3, length:3}
+// typeof sabko "object" bolta hai!
