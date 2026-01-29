@@ -297,3 +297,70 @@ obj_function.getfunction()
 // this = current object 
 
 
+// looping with object 
+console.log()
+console.log(merged_obj)
+
+let object_parent = {
+       parentName : "objectORG",
+       age        :      33
+}
+
+console.log()
+console.log(object_parent)
+
+// now let create new child object from this parent object 
+let obj_child = Object.create(object_parent)
+//adding new values 
+obj_child.Namechild = "childOrg"
+console.log()
+console.log(obj_child)
+console.log()
+// 1) forin loop 
+for (const key in obj_child) {
+     // es line ka matlab hai prototypes say ane vali properties ko ignore ke liye 
+     if (!Object.hasOwn(obj_child, key)) continue;
+     // ager es k bin loop use kroge to parent object ki properties bhi print hongi... 
+     // or ager es line ka use kroge to only the child object properties console hongi..
+     // ager object ko kisi ek parent object say create kiya hai to es line say ham use parent object ki properties ko ignore krte hain. 
+     const element = obj_child[key];
+     console.log(`keys => ${key} <<<>>>> values => ${element}`)
+}
+
+// or a simple for in loop code 
+
+for(keys in merged_obj){
+     console.log(`keys => ${keys} `,` Values => ${merged_obj[keys]}`)
+     console.log()
+}
+
+let test = { 
+     key1: 10001,
+     key2: "number"
+}
+
+// 2) object.keys() + foreach 
+test.key3 = 122
+test.key4 = 133
+test.key5 = 244
+
+// we can print only the key with the help of Object.keys() method + foreach()
+Object.keys(team).forEach((keys)=>{
+      console.log()
+      console.log(`Keys only =>> ${keys}`)
+}) 
+console.log()
+
+// object.values() + foreach to print only the values of object 
+Object.values(team).forEach(values =>{
+      console.log(values)
+})
+console.log()
+
+// // using the object.entries() + foreach to print all the key values 
+
+Object.entries(test).forEach(function (pair){
+      console.log(pair)
+})
+// using this we can get all the keys and values 
+// console.log(Object.entries(team)) // it return krta hai ek array of object key value pairs ka  
