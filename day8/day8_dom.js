@@ -47,7 +47,59 @@ console.log()
 
 // NodeList(17) [text, div.container, text, section, text, div, text, span, text, div, text, comment, text, script, text, script, text] es ek array dekhne ko milega 
 
+// ham jb childnodes ko console krenge to hamne ek array milta hai... 
+let notes = document.body.childNodes
+console.log(notes)
 
+// now ager yeh ek array hai ton esi values ko ham get kr sakte hain using this 
+let first = notes[0]
+let second = notes[1]
+let third  = notes[2]
+let forth = notes[3]
+
+console.log(`First  == > `,first)
+console.log(`Second == > `,second)
+console.log(`Third  == > `,third)
+console.log(`Forth  == > `,forth)
+
+// ager ham browser mein use krte hain to hame alag result show hota hai as compare to this way jo hamne js mein likha hai... 
+
+/** NOTE :- 
+ *  ek line of space koi text node manna jata hai in the DOM , so ager muje nhi chaahie text node muje first element child chaahie how to do this 
+ * 
+ */
+let cc = document.body.childNodes[1]
+let ft = cc.firstElementChild 
+console.log(ft)
+// do this inside the browser to uderstand the better..... 
+/// essa krne say hamne first element milega jo key ek element hoga not text node 
+
+// lets add some style in the first element using the dom 
+ft.style.backgroundColor = "lightgrey"
+ft.style.color = "red"
+
+
+// now ager kisi bhi child element ka parent node get krna hai to use this 
+cc.firstElementChild.parentNode
+// browser mein use krne say jada understanding hogi do the both 
+
+// ager first element k bhi childs ko print krna hai to use this 
+document.body.firstElementChild.children
+
+
+// or ager next element siblings ko bhi print krna hai use this 
+document.body.firstElementChild.children[1].nextSibling  
+// es ki help say no bhi sibling hai element ka vo print hojayega but ager element chaahie not the text node ager next text node hai but muje element chaahie to use this 
+document.body.firstElementChild.children[1].nextElementSibling
+
+
+document.body.firstChild  /// es ki help say ham first child ko get krete hain jo k koi bhi node jo first child hai means text node ho sakta hai... 
+
+// privious element child bhi print kr sakte hain 
+document.body.children[1].previousElementSibling
+
+// count kr sakte hain child elements ko .... 
+document.body.childElementCount
 // now lets manipulate element by the attribute class name 
 // ham use kr rahe hai 
 // getElementsByClassName() property or ham classname attribute say us element ko target kr sakate hain..  
