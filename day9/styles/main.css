@@ -1,0 +1,55 @@
+.maincontainer{
+    border: 2px solid black;
+    height: 50rem;
+    width: 89vw;  
+    background-color: antiquewhite;
+    color: black;
+
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 20px;
+    position: relative;
+}
+
+.box{
+    margin-top: 10rem;
+    width: 10rem;
+    height: 10rem;
+    border: 2px solid red;
+    border-radius: 10px;
+    margin-left: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#box_first {
+    background-color: brown;
+}
+
+.content {
+    display: block;
+    gap: 10rem;
+    position: absolute;
+    bottom: 0;
+    right: 30rem;
+}
+.message { 
+    border: 1px solid black;
+    width: 8rem;
+    height: 4rem;
+    padding-top: 20px;
+    padding-left: 15px;
+}
+
+.p_items{
+    margin-top: 2px;
+    border: 2px solid black ;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    flex-direction: column;
+
+}
