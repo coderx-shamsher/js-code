@@ -235,3 +235,66 @@ let li = document.getElementsByClassName("list_li")
 
 ```
 >> done .... 
+
+## adding more about the dom operations 
+> hidden elements , how to find and how to set ..... 
+```js 
+// how to check the element hidden property !? 
+let hidden = document.querySelector(".title").hidden
+console.log(hidden)
+// ager false show ho to means koi bhi hidden property nhi hai , ese ham manully set bhi kr sakte hain 
+
+let hidden = document.querySelector(".title").hidden = true
+let hidden = document.querySelector(".title").hidden = false 
+
+// ager kisi bhi element ko hidden kiya hai to hamne true show hoga nhi to false show hoga ... 
+
+
+```
+##  attribute hai k nhi kaise pata kre ... !? or how to add , remove attribute  
+```js 
+// find attributes 
+console.log()
+let nodes = document.querySelector("#title1").childNodes
+nodes[1].hasAttribute("style") 
+console.log(nodes) 
+
+console.log()
+// es ki help say hame yeh pta chlta hai k attributes hai k nhi ager true aya means koi na koi hai ager false hai means koi bhi attribute hai.. 
+document.querySelector("#title1").hasAttributes()  
+// ager ek bhi attribute hoga to true milega false means kkoi bhi nhi .. 
+
+
+// how to get all the attributes use this 
+document.querySelector(".title").attributes
+
+// now hane find krda dekha add krna dekha ! how to remove the attribute 
+// first mai add kr rahan hun 
+document.getElementById("ul_1").setAttribute("name","ul_name_attribute")
+
+document.getElementById("ul_1").removeAttribute("name")
+
+
+```
+* fun to know -> ager ham document.designMode = "on" , es krne say ham kisi bhi website koi temporaly  change kr skate hain.. 
+
+## getting element by tag name or the name of the element 
+```js 
+// get element by tagName means the name of the element 
+document.getElementsByTagName("div")
+// yeh ek html collection return krta hai jo ki hoga jitne bhi div or jo bhi element ko ham target kr rahe hain..  
+
+``` 
+
+## how to get elements by name attribute 
+```js 
+// first lets give a name attribute 
+document.querySelector(".content")
+document.querySelector(".content").attributes
+document.querySelector(".content").setAttribute("name","value")
+document.getElementsByName("value") 
+
+// jo bhi value hamne name attribute mein pass kari hai uska use krke han element koi get kr sakte hain 
+
+
+`
