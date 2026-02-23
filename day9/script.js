@@ -147,4 +147,41 @@ let li = document.getElementsByClassName("list_li")
  liarr.forEach(ele=>{
      ele.style.backgroundColor = "lightgreen "
  })
-  
+ 
+ 
+let hidden = document.querySelector(".title").hidden = true
+// console.log(hidden)
+console.log()
+
+// find attributes 
+console.log()
+let nodes = document.querySelector("#title1").childNodes
+nodes[1].hasAttribute("style") 
+console.log(nodes) 
+
+console.log()
+// es ki help say hame yeh pta chlta hai k attributes hai k nhi ager true aya means koi na koi hai ager false hai means koi bhi attribute hai.. 
+document.querySelector("#title1").hasAttributes()  
+// ager ek bhi attribute hoga to true milega false means kkoi bhi nhi .. 
+
+// how to get all the attributes use this 
+document.querySelector(".title").attributes
+
+// now hane find krda dekha add krna dekha ! how to remove the attribute 
+// first mai add kr rahan hun 
+document.getElementById("ul_1").setAttribute("name","ul_name_attribute")
+
+document.getElementById("ul_1").removeAttribute("name")
+
+// document.designMode = "on"
+
+// get element by tagName means the name of the element 
+document.getElementsByTagName("div")
+
+// get element by name attribute 
+// first set the attribute 
+document.querySelector(".content")
+document.querySelector(".content").attributes
+document.querySelector(".content").setAttribute("name","value")
+
+document.getElementsByName("value")
