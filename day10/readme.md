@@ -1,4 +1,4 @@
-# Creating a new element in DOM 
+# Topic -->  Creating a new element in DOM 
  
 ## create html file 
 ```html
@@ -87,4 +87,77 @@ console.log(nodes) // eh hame ek node list (array) return krega jis mein kuch te
 
 
 ```
+> this is more dom operations need to practice or learn about it 
 
+## Now lets create new elements using the dom operations 
+1) create a new html file with basic template and just make sure no elements inside the body for now.. just blank html file 
+```html 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+```
+
+##  new element js code here 
+```js 
+// Create element with createElement() method   
+const div = document.createElement("div")
+console.log(div)
+
+// lets add some attributes 
+div.setAttribute("name","main_div")
+
+// adding class attribute using the setattribute()
+div.setAttribute("class","container")
+
+// using the className() setting the class name 
+div.className = "main_box"
+
+// setting id using the id()
+div.id = "id001"
+
+
+// adding some style in div 
+div.style.backgroundColor = "rgba(25, 104, 113, 0.915)"
+div.style.paddingLeft = "15px"
+div.style.paddingTop = "15px"
+div.style.width = "25rem"
+div.style.height = "20rem"
+
+// adding text or content inside the div 
+// or hame eske ander koi or element bhi add kr sakte hain 
+let h2 = document.createElement("h2")
+
+// using the append child method ham add krte hain koi bhi element kisi bhi Element mein 
+div.appendChild(h2)
+
+// adding some text inside the h2 now 
+// 1) first way to do that but yeah ek efficient way nhhi mana jata keo k yeh memory efficient nhi hai 
+// h2.innerText = "This is the heading of main Content"
+
+// 2) way to do the same thing 
+// first create a text node using the document 
+let textnode = document.createTextNode = "this is text node .. broo."
+
+// then append into your Element using the appendChild() Method 
+h2.appendChild(textnode)
+
+
+```
+
+> now hamara server run krne k bad bhi hame hamara new Element show nhi hoga keo k hame ese add krna pardta hai yan link jo bhi samjo then how to do that
+
+```js 
+// add or append the new Element into body 
+document.body.appendChild(div)  // add this line and element show hoga 
+```
+
+> that is the all how to add new element or ese he ham new elements add kr sakte hain.. 
