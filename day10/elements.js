@@ -106,3 +106,11 @@ after_div.insertAdjacentHTML("afterend","adding string using the AfterEnd <stron
 // ab mere div k end mein yeh string or text content add ho gya 
 
 after_div.insertAdjacentHTML("beforeend"," <br> adding string using the beforeend <strong> in insertAdjacenthtml </strong>")
+
+
+// toggle yeh ke switch ki tranh hai ager off hai to on krdo nhi to off kr do 
+let tbtn = document.getElementById("toggle")
+
+// maine ek class create kri hai or main mere toggle function mein pass kr raha hun.. toggle("change_toggle")
+tbtn.classList.toggle("change_toggle")
+tbtn.classList.toggle("change_other")
