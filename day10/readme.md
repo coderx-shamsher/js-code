@@ -251,3 +251,48 @@ after_div.insertAdjacentHTML("afterend","adding string using the AfterEnd <stron
 // ab mere div k end mein yeh string or text content add ho gya 
 
 after_div.insertAdjacentHTML("beforeend"," <br> adding string using the beforeend <strong> in insertAdjacenthtml </strong>")
+```
+-----
+
+## toggle method most used 
+```html
+ <style>
+          .colorchange_with_toggle{
+            width: 10rem;
+            height: 10rem;
+            background-color: bisque;
+            color: rebeccapurple;           
+          }
+
+          .change_toggle{
+            background-color: aliceblue;
+            color: bisque;
+          }
+          .change_other{
+            background-color: antiquewhite;
+            color: greenyellow;
+            height: 20rem;
+            width: 220rem;
+          }
+     </style>
+    <div class="togglebt">
+           <div class="colorchange_with_toggle" name="toggle_color_change" id="toggle">
+                  toggle to change the background-color and the text 
+           </div>
+    </div>
+
+```
+
+```js 
+
+
+// toggle yeh ke switch ki tranh hai ager off hai to on krdo nhi to off kr do 
+let tbtn = document.getElementById("toggle")
+
+// maine ek class create kri hai or main mere toggle function mein pass kr raha hun.. toggle("change_toggle")
+tbtn.classList.toggle("change_toggle")
+tbtn.classList.toggle("change_other")
+
+// eska use case ham next dekhenge jab event lister add krenge.. 
+
+``` 
