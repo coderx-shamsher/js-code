@@ -26,3 +26,32 @@ delbtn.addEventListener("dblclick",()=>{
       // removing nodes using the .remove() function 
       div.remove()
 })
+
+// ek hi button pr ham multiple handlers koi add kr sakte hain using this addeventlistener kaise krna hai lets code ... 
+
+// same button or two actions using the same event function 
+btn1.addEventListener("click",()=>{
+    console.log("this button is clicked...")
+})
+
+btn1.addEventListener("click",()=>{
+    console.log("this button is clicked... again")
+})
+
+
+// lets see other event type 
+// contextmenu  -- right click krne pr koi action perform hoga.. 
+let rightclickevent = document.getElementById("rightClick")
+
+rightclickevent.addEventListener("contextmenu",()=>{
+    //   console.log(event)
+    //   alert('You right click on this box '); 
+    //   let mainclass =  document.getElementsByClassName("mainbx")
+    let newdiv = document.createElement("div")
+    newdiv.style.border = "2px solid lightgreen"
+    newdiv.style.width = '14rem'
+    newdiv.style.height = "10rem"
+    newdiv.innerHTML = "<h3> This is new element </h3> <br> <hr> <p> welcome <strong> In this events</strong> </p> "
+    newdiv.style.marginTop = "4rem"
+    document.querySelector(".mainbx").appendChild(newdiv)
+})
