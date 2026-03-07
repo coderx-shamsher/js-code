@@ -1,4 +1,4 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
+<!-- <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/> -->
 
 
 ## Big idea (1 minute intro)
@@ -238,10 +238,21 @@ Loops repeat code (`for`, `while`, `do...while`) and help you process lists or r
 Real projects mostly use: `for`/`for...of` + small reusable functions.[^6][^2]
 
 ***
+Bilkul 👍 **clear, short aur to-the-point** samjho 💡
 
-Question (so examples match your workflow):
-Do you practice JavaScript in **browser console** (Chrome DevTools) or in **Node.js** (VS Code terminal)?
-<span style="display:none">[^10][^11][^12][^13][^14][^15][^16][^17][^18][^19][^20][^21][^22][^23][^24][^25]</span>
+---
+
+## 🔍 Code
+
+```js
+for (const key in ob) {
+  if (!Object.hasOwn(object, key)) continue;
+}
+```
+
+
+
+
 
 <div align="center">⁂</div>
 
