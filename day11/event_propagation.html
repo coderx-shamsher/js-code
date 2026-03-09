@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event propagation,bubbling&capturing</title>
+</head>
+<style>
+       #parent{
+         width: 20rem;
+         height: 20rem;
+         border: 2px solid goldenrod;
+         padding: 4rem;
+       }
+       .childbtn{
+         width: 10rem;
+         height: 10rem;
+         border: 2px solid hotpink;
+         margin-top: 40px;
+         padding-top: 40px;
+         padding-left: 40px;
+           
+        }
+</style>
+<body>
+    <div id="parent" >
+       Parent (click anywhere)
+       
+       <div class="childbtn">
+           <button id="child">Child Button</button>
+       </div>
+</div>
+<!-- BUbbling (bottom to top)  this is the default nature of browser-->
+<!-- <script>
+    document.getElementById('parent').addEventListener('click', () => {
+        console.log('Parent clicked!');
+    });
+    
+    document.getElementById('child').addEventListener('click', () => {
+        console.log('Child clicked!');
+    });
+</script> -->
+
+<!-- now hoga kiya ? jab bhi ham child button pr click krte hain to parent bhi triggered hota jo ki hame console mein print hoga.. or ager ham child button mein nhii but uske area mein like jo box hai jis mein button hai us box mein kisi bhi area mein click krenge to parent trigger hota hai.... 
+
+1) child button pr click krte hain to parent bhi trigger hota hai.. yeh bubble rise jaisa hai bottom to top
+
+     parent  
+        ^
+        |
+        | 
+    child button 
+
+    Child clicked!    // 1st (target)
+    Parent clicked!   // 2nd (bubbling up)
+-->
+
+<!-- capturing (top down) -->
+
+<script>
+
+// 3rd parameter = true for capturing
+document.getElementById('parent').addEventListener('click', () => {
+    console.log('Parent CAPTURED');
+}, true); // Capture phase
+
+document.getElementById('child').addEventListener('click', () => {
+    console.log('Child clicked!');
+}, );
+
+// also change the value of evnet function boolean value like true and false 
+</script>
+<!-- now first parent captured hoga then child clicked console hoga .. hamne callback function k bad ek boolen value dente hai jo ki true hoti hai in jaise ki mein mere first event function mein pass kri hai 
+ 
+Order: Parent → Child → Parent
+
+now order change hogye hai  child pr click krne par pahle parent trigger ho rahe hai or then child ka console run ho rahe hai 
+
+>>> parent then child 
+
+ager maine parent k capture argument ki value false krdu or child ki true then order fir say change hoga now child capture hoga or parent then trigger hoga 
+
+>>>  first child or then parent 
+-->
+
+</body>
+</html> 
