@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event object deep dive</title>
+</head>
+<body>
+    <button id="eventDemo">Click for details</button>
+<script>
+    document.getElementById('eventDemo').addEventListener('click', (event) => {
+        console.log('=== Event Object ===');
+        console.log('Target:', event.target);           // Element clicked jo bhi element click kiya hog..
+        console.log('Current Target:', event.currentTarget); // Listener element
+        console.log('Type:', event.type);              // 'click'   event type konsa hai.. 
+        console.log('Client X/Y:', event.clientX, event.clientY); // Mouse pos
+        console.log('Ctrl pressed:', event.ctrlKey);   // Keyboard state ctrl key press kri hai k nhi 
+        console.log('Timestamp:', event.timeStamp);    // When it happened
+    });
+</script>
+    
+</body>
+</html>
