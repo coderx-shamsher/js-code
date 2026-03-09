@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Events Here</title>
+</head>
+<style>
+      #main_div{
+        width: 40rem;
+        height: 40rem;
+        background-color: bisque;
+        border: 2px solid greenyellow;
+        border-radius: 20px;
+      }
+      #formDemo{
+         display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column ;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      input{
+        width: 20rem;
+        height: 2rem;
+        border-radius: 20px;
+        padding-left: 20px;
+      }
+      button{
+        width: 6rem;
+        padding: 10px;
+        border-radius: 20px;
+      }
+</style>
+<body>
+    <div id="main_div">
+
+      <form id="formDemo">
+         <input id="name" type="text" placeholder="Name">
+         <input id="email" type="email" placeholder="Email">
+         <button type="submit">Submit</button>
+
+       </form>
+
+    </div>
+
+<script>
+    // Input events
+    document.getElementById('name').addEventListener('input', (e) => {
+        console.log('Typing:', e.target.value);
+    });
+    
+    // Form submit
+    document.getElementById('formDemo').addEventListener('submit', (e) => {
+        e.preventDefault(); // Stop form submission
+        console.log('Form submitted!');
+    });
+</script>
+</body>
+</html>
