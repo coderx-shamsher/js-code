@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse events</title>
+</head>
+<style>
+       #main{
+         width: 60rem;
+         height: 50rem;
+         border: 2px solid lightpink;
+         border-radius: 3rem;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 100px ;
+         
+        }
+       
+</style>
+<body>
+     <div id="main">
+
+         <div>
+             <button id="mouseDemo">Hover & Click</button>
+         </div>
+    </div>
+
+
+    
+</body>
+</html>
+ <script>
+    const btn = document.getElementById('mouseDemo');
+    btn.addEventListener('click', () => console.log('Clicked!'));
+    btn.addEventListener('dblclick', () => console.log('Double clicked!'));
+    btn.addEventListener('mouseenter', () => console.log('Mouse entered'));
+    btn.addEventListener('mouseleave', () =>{
+         console.log('Mouse left')
+        let div =  document.createElement("div")
+        document.getElementById("main").append(div)
+        div.style.backgroundColor = "lightblue"
+        div.style.border = "2px solid red"
+        div.style.width = "10rem"
+        div.style.height ="10rem"
+    
+
+
+    });
+    btn.addEventListener('mouseover', () =>{
+         console.log('Mouse over')
+         alert("hover the mouse and mouse over in action  .....")
+    }); 
+    btn.addEventListener('mouseout', () => {
+         console.log('Mouse out')
+         alert("you hover and mouse out ")
+    });
+</script>
